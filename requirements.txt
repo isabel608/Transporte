@@ -1,0 +1,14 @@
+asgiref==3.11.0
+dj-database-url==3.1.2
+Django==5.2.8
+gunicorn==25.3.0
+numpy==2.3.5
+packaging==26.1
+pandas==2.3.3
+psycopg2==2.9.11
+python-dateutil==2.9.0.post0
+pytz==2025.2
+six==1.17.0
+sqlparse==0.5.3
+tzdata==2025.2
+whitenoise==6.12.0

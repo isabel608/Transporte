@@ -1,0 +1,49 @@
+{% extends 'plantilla.html' %}
+
+
+{% block section %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-hearder bg-secondary text.white">
+            Registro de Viajes
+</div>
+        <div class="card-body">
+            <form method="post">
+
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label>Fecha</label>
+                    {{form.fecha}}
+                </div>
+
+                <div class="mb-3">
+                    <label>Hora</label>
+                    {{form.hora}}
+                </div>
+
+                <div class="mb-3">
+                    <label>Bus</label>
+                    {{form.bus}}
+                </div>
+
+                <div class="mb-3">
+                    <label>Ruta</label>
+                    {{form.ruta}}
+                </div>
+
+                <button type="submit" class="btn btn-outline-warning">Guardar</button>
+            </form>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-primary" role="alert">
+                {{messages}}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock section %}

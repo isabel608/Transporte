@@ -1,0 +1,31 @@
+{% extends 'plantilla.html' %}
+
+
+{% block section %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-hearder bg-secondary text.white">
+            Registro de Buses
+</div>
+        <div class="card-body">
+            <form method="post">
+
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label>Placa</label>
+                    {{form.placa}}
+                </div>
+
+                <div class="mb-3">
+                    <label>Capacidad</label>
+                    {{form.capacidad}}
+                </div>
+
+                <button class="btn btn-outline-succes">Guardar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock section %}

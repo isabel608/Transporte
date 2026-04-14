@@ -1,0 +1,49 @@
+{% extends 'Plantilla.html' %}
+
+
+{% block section %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-hearder bg-secondary text.white">
+            Registro de Boleto
+</div>
+        <div class="card-body">
+            <form method="post">
+
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label>Pasajero</label>
+                    {{form.pasajero}}
+                </div>
+
+                <div class="mb-3">
+                    <label>Viaje</label>
+                    {{form.viaje}}
+                </div>
+
+                <div class="mb-3">
+                    <label>No_asiento</label>
+                    {{form.no_asiento}}
+                </div>
+                Asiento Vendido
+                <select name="" id="">
+                {% for pr in boleto %}
+                    <option value="{{pr.id}}">viaje: {{pr.viaje}} - asiento: {{pr.no_asiento}}</option>
+                {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-outline-success">Guardar</button>
+            </form>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-primary" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock section %}
