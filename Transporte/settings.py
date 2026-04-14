@@ -131,5 +131,4 @@ SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 STATIC_ROOT =os.path.join(BASE_DIR,'staticles')
-STATICFILES_STORAGE
-'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
